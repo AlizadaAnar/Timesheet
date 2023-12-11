@@ -40,7 +40,8 @@ public class WorkersController {
     @GetMapping("/workers/new")
     public void createWorker(Model model) {
         Workers workers = new Workers();
-        model.addAttribute("worker", workers);
+//        model.addAttribute("worker", workers);
+        workersService.saveWorkers(workers);
     }
 
 
@@ -58,12 +59,9 @@ public class WorkersController {
 
 
 
-    //create and update
-//    @PostMapping("/workers/{id}")
-//    public void updateWorkers(@PathVariable Long id, @ModelAttribute("worker") Workers workers,
-//                              Model model) {
-//        Workers existingWorker = workersService.getWorkersById(id);
-//        existingWorker.setFirstName();
-//    }
+    /*CRUD  R+,  D+
+    delete - worked
+    get all - worked, getbyid - worked
+     */
 
 }
