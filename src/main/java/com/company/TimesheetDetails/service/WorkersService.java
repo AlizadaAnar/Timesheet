@@ -8,4 +8,12 @@ public interface WorkersService {
 
     List<Workers> getAllWorkers();
 
+    Workers saveWorkers(Workers workers);
+
+    Workers getWorkersById(Long id);
+
+    Workers updateWorkers(Workers workers);
+
+    void deleteWorkersById(Long id);
+
 }

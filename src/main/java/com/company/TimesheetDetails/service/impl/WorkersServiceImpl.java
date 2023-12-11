@@ -22,4 +22,24 @@ public class WorkersServiceImpl implements WorkersService {
         return allWorkerRepository.findAll();
     }
 
+    @Override
+    public Workers saveWorkers(Workers workers) {
+        return allWorkerRepository.save(workers);
+    }
+
+    @Override
+    public Workers getWorkersById(Long id) {
+        return allWorkerRepository.findById(id).get();
+    }
+
+    @Override
+    public Workers updateWorkers(Workers workers) {
+        return allWorkerRepository.save(workers);
+    }
+
+    @Override
+    public void deleteWorkersById(Long id) {
+        allWorkerRepository.deleteById(id);
+    }
+
 }
