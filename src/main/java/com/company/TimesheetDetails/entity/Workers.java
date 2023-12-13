@@ -1,11 +1,15 @@
 package com.company.TimesheetDetails.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.util.Objects;
 
 @Entity
 @Table(name = "workers")
+@DynamicInsert
+@DynamicUpdate
 public class Workers {
 
     @Id

@@ -26,11 +26,19 @@ public class WorkersController {
     }
 
 
+    @CrossOrigin(origins = "http://localhost:5174")
     @PostMapping("/workers")
     public void saveWorkers(@ModelAttribute("workers") Workers workers) {
         workersService.saveWorkers(workers);
     }
 
+    @CrossOrigin(origins = "http://localhost:5174")
+    @PutMapping("/{id}")
+    public Workers updateWorker(@PathVariable Long id, @RequestBody Workers workerRequest) {
+        return workersService.updateWorkers(id, workerRequest);
+    }
+
+    @CrossOrigin(origins = "http://localhost:5174")
     @GetMapping("/workers/{workerId}/edit")
     public void editWorkerForm(@PathVariable("workerId") long workerId, Model model) {
         Workers worker = workersService.getWorkersById(workerId);

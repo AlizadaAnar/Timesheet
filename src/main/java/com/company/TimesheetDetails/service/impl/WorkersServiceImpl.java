@@ -33,8 +33,22 @@ public class WorkersServiceImpl implements WorkersService {
     }
 
     @Override
-    public Workers updateWorkers(Workers workers) {
-        return allWorkerRepository.save(workers);
+    public Workers updateWorkers(Long id, Workers workers) {
+//        return allWorkerRepository.save(workers);
+        Workers existingWorker = allWorkerRepository.findById(id).get();
+        existingWorker.setFirstName(workers.getFirstName());
+        existingWorker.setLastname(workers.getLastname());
+        existingWorker.setNumber(workers.getNumber());
+        existingWorker.setEmail(workers.getEmail());
+        existingWorker.setMarineDaysOn(workers.getMarineDaysOn());
+        existingWorker.setTrainingDays(workers.getTrainingDays());
+        existingWorker.setSickDays(workers.getSickDays());
+        existingWorker.setVacationDays(workers.getVacationDays());
+        existingWorker.setUnpaidWorkingDays(workers.getUnpaidWorkingDays());
+        existingWorker.setEducationalVacation(workers.getEducationalVacation());
+        existingWorker.setUsername(workers.getUsername());
+        existingWorker.setPassword(workers.getPassword());
+        return allWorkerRepository.save(existingWorker);
     }
 
     @Override

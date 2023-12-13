@@ -12,7 +12,7 @@ public interface WorkersService {
 
     Workers getWorkersById(Long id);
 
-    Workers updateWorkers(Workers workers);
+    Workers updateWorkers(Long id, Workers workers);
 
     void deleteWorkersById(Long id);
 
