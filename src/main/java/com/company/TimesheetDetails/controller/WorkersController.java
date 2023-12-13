@@ -19,6 +19,7 @@ public class WorkersController {
         this.workersService = workersService;
     }
 
+    @CrossOrigin(origins = "http://localhost:5174")
     @GetMapping(value = "/workers", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Workers> listWorkers() {
         return workersService.getAllWorkers();
