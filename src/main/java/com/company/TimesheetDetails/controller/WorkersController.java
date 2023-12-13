@@ -32,7 +32,7 @@ public class WorkersController {
 //        workersService.saveWorkers(workers);
 //    }
 
-//    @CrossOrigin(origins = "http://localhost:5174")
+    @CrossOrigin(origins = "http://localhost:5174")
     @PutMapping(value = "/{id}")
     public Workers updateWorker(@PathVariable Long id, @RequestBody Workers workerRequest) {
         return workersService.updateWorkers(id, workerRequest);
