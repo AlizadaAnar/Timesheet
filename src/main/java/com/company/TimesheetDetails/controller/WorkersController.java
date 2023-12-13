@@ -54,7 +54,7 @@ public class WorkersController {
 
     @CrossOrigin(origins = "http://localhost:5174")
     @DeleteMapping("/workers/{id}")
-    public void deleteWorkers(@PathVariable Long id) {
+    public void DELETE(@PathVariable Long id) {
         workersService.deleteWorkersById(id);
     }
 
