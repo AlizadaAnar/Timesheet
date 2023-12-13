@@ -7,14 +7,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-@Configuration
 @SpringBootApplication
-public class TimesheetDetailsApplication implements WebMvcConfigurer{
+public class TimesheetDetailsApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(TimesheetDetailsApplication.class, args);
-	}
-	
+    public static void main(String[] args) {
+        SpringApplication.run(TimesheetDetailsApplication.class, args);
+    }
+
 //	@Bean
 //	public WebMvcConfigurer corsConfigurer() {
 //		return new WebMvcConfigurer() {
@@ -25,15 +24,5 @@ public class TimesheetDetailsApplication implements WebMvcConfigurer{
 //		};
 //	}
 
-
-	@Override
-	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/**")
-				.allowedOrigins("*")  // Allow all origins. You may restrict it to specific origins.
-				.allowedMethods("PUT", "POST", "GET", "OPTIONS", "DELETE")
-				.allowedHeaders("*")
-				.allowCredentials(true)
-				.maxAge(3600);  // Max age for pre-flight requests (in seconds)
-	}
 
 }
