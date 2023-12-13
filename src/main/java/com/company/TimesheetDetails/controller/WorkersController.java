@@ -33,7 +33,7 @@ public class WorkersController {
 //    }
 
 //    @CrossOrigin(origins = "http://localhost:5174")
-    @GetMapping(value = "/upp/{id}")
+    @PutMapping(value = "/{id}")
     public Workers updateWorker(@PathVariable Long id, @RequestBody Workers workerRequest) {
         return workersService.updateWorkers(id, workerRequest);
     }
