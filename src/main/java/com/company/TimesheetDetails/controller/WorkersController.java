@@ -26,11 +26,11 @@ public class WorkersController {
     }
 
 
-    @CrossOrigin(origins = "http://localhost:5174")
-    @PostMapping("/workers")
-    public void saveWorkers(@ModelAttribute("workers") Workers workers) {
-        workersService.saveWorkers(workers);
-    }
+//    @CrossOrigin(origins = "http://localhost:5174")
+//    @PostMapping("/workers")
+//    public void saveWorkers(@ModelAttribute("workers") Workers workers) {
+//        workersService.saveWorkers(workers);
+//    }
 
     @CrossOrigin(origins = "http://localhost:5174")
     @PostMapping("/upp/{id}")
