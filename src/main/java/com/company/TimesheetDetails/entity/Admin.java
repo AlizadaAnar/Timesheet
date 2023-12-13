@@ -5,8 +5,8 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "workers")
-public class Workers {
+@Table(name = "admin")
+public class Admin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,15 +48,15 @@ public class Workers {
     @Column(name = "password")
     private String password;
 
-    public Workers() {
+    public Admin() {
 
     }
 
-    public Workers(Long id) {
+    public Admin(Long id) {
         this.id = id;
     }
 
-    public Workers(Long id, String firstName, String lastname, int number, String email, int marineDaysOn, int trainingDays, int sickDays, int vacationDays, int unpaidWorkingDays, int educationalVacation, String username, String password) {
+    public Admin(Long id, String firstName, String lastname, int number, String email, int marineDaysOn, int trainingDays, int sickDays, int vacationDays, int unpaidWorkingDays, int educationalVacation, String username, String password) {
         this.id = id;
         this.firstName = firstName;
         this.lastname = lastname;
@@ -179,8 +179,8 @@ public class Workers {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Workers workers)) return false;
-        return getNumber() == workers.getNumber() && getMarineDaysOn() == workers.getMarineDaysOn() && getTrainingDays() == workers.getTrainingDays() && getSickDays() == workers.getSickDays() && getVacationDays() == workers.getVacationDays() && getUnpaidWorkingDays() == workers.getUnpaidWorkingDays() && getEducationalVacation() == workers.getEducationalVacation() && Objects.equals(getId(), workers.getId()) && Objects.equals(getFirstName(), workers.getFirstName()) && Objects.equals(getLastname(), workers.getLastname()) && Objects.equals(getEmail(), workers.getEmail()) && Objects.equals(getUsername(), workers.getUsername()) && Objects.equals(getPassword(), workers.getPassword());
+        if (!(o instanceof Admin admin)) return false;
+        return getNumber() == admin.getNumber() && getMarineDaysOn() == admin.getMarineDaysOn() && getTrainingDays() == admin.getTrainingDays() && getSickDays() == admin.getSickDays() && getVacationDays() == admin.getVacationDays() && getUnpaidWorkingDays() == admin.getUnpaidWorkingDays() && getEducationalVacation() == admin.getEducationalVacation() && Objects.equals(getId(), admin.getId()) && Objects.equals(getFirstName(), admin.getFirstName()) && Objects.equals(getLastname(), admin.getLastname()) && Objects.equals(getEmail(), admin.getEmail()) && Objects.equals(getUsername(), admin.getUsername()) && Objects.equals(getPassword(), admin.getPassword());
     }
 
     @Override
@@ -190,7 +190,7 @@ public class Workers {
 
     @Override
     public String toString() {
-        return "Workers{" +
+        return "Admin{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastname='" + lastname + '\'' +
@@ -207,5 +207,3 @@ public class Workers {
                 '}';
     }
 }
-
-
