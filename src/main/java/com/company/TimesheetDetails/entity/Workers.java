@@ -8,8 +8,6 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "workers")
-@DynamicInsert
-@DynamicUpdate
 public class Workers {
 
     @Id
