@@ -13,10 +13,9 @@ public interface AdminService {
 
     Admin getAdminById(Long id);
 
-    Admin updateAdmin(Admin admin);
+    Admin updateAdmin(Long id, Admin admin);
 
     void deleteAdminById(Long id);
 
-    Admin getAdminByUsername(String username);
-
+    public String getPasswordByUsername(String username);
 }

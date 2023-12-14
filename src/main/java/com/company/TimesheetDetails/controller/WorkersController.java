@@ -3,7 +3,6 @@ package com.company.TimesheetDetails.controller;
 import com.company.TimesheetDetails.entity.Workers;
 import com.company.TimesheetDetails.service.WorkersService;
 import org.springframework.http.MediaType;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,43 +19,39 @@ public class WorkersController {
         this.workersService = workersService;
     }
 
-    //    @CrossOrigin(origins = "http://localhost:5174")
+    //Get:  Brings all data
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping(value = "/workers", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Workers> listWorkers() {
         return workersService.getAllWorkers();
     }
 
 
+    //Post: Posting new data
     @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("/workers")
     public void saveWorkers(@RequestBody Workers workers) {
         workersService.saveWorkers(workers);
     }
 
-        @CrossOrigin(origins = "http://localhost:5174")
+    //Put: Updates the current data
+    @CrossOrigin(origins = "http://localhost:5173")
     @PutMapping("/workers/{wId}")
     public Workers updateWorker(@PathVariable Long wId, @RequestBody Workers workerRequest) {
         return workersService.updateWorkers(wId, workerRequest);
     }
 
-    @CrossOrigin(origins = "http://localhost:5174")
 
-
-    @GetMapping("/workers/new")
-    public void createWorker(Model model) {
-        Workers workers = new Workers();
-//        model.addAttribute("worker", workers);
-        workersService.saveWorkers(workers);
-    }
-
-
+    //Get: Get selected data by id
+    @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/worker/{id}")
     public Workers findWorkerById(@PathVariable long id) {
         return workersService.getWorkersById(id);
     }
 
 
-    //    @CrossOrigin(origins = "http://localhost:5174")
+    //Delete: Deletes data by id
+    @CrossOrigin(origins = "http://localhost:5173")
     @DeleteMapping("/workers/{id}")
     public void DELETE(@PathVariable Long id) {
         workersService.deleteWorkersById(id);
