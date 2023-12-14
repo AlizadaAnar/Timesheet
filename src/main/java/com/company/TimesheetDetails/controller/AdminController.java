@@ -31,11 +31,11 @@ public class AdminController {
         adminService.saveAdmin(admin);
     }
 
-    @GetMapping("/admin/{adminId}/edit")
-    public void editAdminForm(@PathVariable("adminId") long adminId, Model model) {
-        Admin admin = adminService.getAdminById(adminId);
-        model.addAttribute("admin", admin);
-    }
+//    @GetMapping("/admin/{adminId}/edit")
+//    public void editAdminForm(@PathVariable("adminId") long adminId, Model model) {
+//        Admin admin = adminService.getAdminById(adminId);
+//        model.addAttribute("admin", admin);
+//    }
 
     @GetMapping("/admin/new")
     public void createAdmin(Model model) {

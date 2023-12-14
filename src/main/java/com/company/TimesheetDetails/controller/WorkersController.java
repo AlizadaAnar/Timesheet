@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
-@CrossOrigin(origins = "http://localhost:5174")
+@CrossOrigin(origins = "http://localhost:5174", allowCredentials = "true", allowedHeaders = {"Authorization", "Content-Type"})
 public class WorkersController {
 
     private final WorkersService workersService;
@@ -20,7 +20,7 @@ public class WorkersController {
         this.workersService = workersService;
     }
 
-//    @CrossOrigin(origins = "http://localhost:5174")
+    //    @CrossOrigin(origins = "http://localhost:5174")
     @GetMapping(value = "/workers", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Workers> listWorkers() {
         return workersService.getAllWorkers();
@@ -33,18 +33,13 @@ public class WorkersController {
 //        workersService.saveWorkers(workers);
 //    }
 
-//    @CrossOrigin(origins = "http://localhost:5174")
+    //    @CrossOrigin(origins = "http://localhost:5174")
     @PutMapping("/workers/{id}")
     public Workers updateWorker(@PathVariable Long id, @RequestBody Workers workerRequest) {
         return workersService.updateWorkers(id, workerRequest);
     }
 
 //    @CrossOrigin(origins = "http://localhost:5174")
-    @GetMapping("/workers/{workerId}/edit")
-    public void editWorkerForm(@PathVariable("workerId") long workerId, Model model) {
-        Workers worker = workersService.getWorkersById(workerId);
-        model.addAttribute("worker", worker);
-    }
 
 
     @GetMapping("/workers/new")
@@ -61,13 +56,11 @@ public class WorkersController {
     }
 
 
-//    @CrossOrigin(origins = "http://localhost:5174")
+    //    @CrossOrigin(origins = "http://localhost:5174")
     @DeleteMapping("/workers/{id}")
     public void DELETE(@PathVariable Long id) {
         workersService.deleteWorkersById(id);
     }
-
-
 
 
 }
