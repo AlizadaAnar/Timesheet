@@ -1,7 +1,6 @@
 package com.company.TimesheetDetails.service.impl;
 
 import com.company.TimesheetDetails.entity.Admin;
-import com.company.TimesheetDetails.entity.Workers;
 import com.company.TimesheetDetails.repository.AdminRepository;
 import com.company.TimesheetDetails.service.AdminService;
 import org.springframework.stereotype.Service;

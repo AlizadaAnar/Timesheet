@@ -27,7 +27,7 @@ public class WorkersController {
     }
 
 
-    //Post: Posting new data
+    //Post: Posting a new data
     @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("/workers")
     public void saveWorkers(@RequestBody Workers workers) {
@@ -50,7 +50,7 @@ public class WorkersController {
     }
 
 
-    //Delete: Deletes data by id
+    //Delete: Deletes a data by id
     @CrossOrigin(origins = "http://localhost:5173")
     @DeleteMapping("/workers/{id}")
     public void DELETE(@PathVariable Long id) {

@@ -20,14 +20,14 @@ public class AdminController {
     }
 
 
-    //Get: Get Admin
+    //Get: Get an Admin
     @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping(value = "/admin", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Admin> listAdmin() {
         return adminService.getAdmin();
     }
 
-    //Post: Posting new data
+    //Post: Posting the new data
     @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("/admin")
     public void saveAdmin(@RequestBody Admin admin) {
@@ -43,7 +43,7 @@ public class AdminController {
     }
 
 
-    //Get: Get admin by id
+    //Get: Get an admin by id
     @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/admin/{id}")
     public Admin findAdminById(@PathVariable long id) {
@@ -58,7 +58,7 @@ public class AdminController {
     }
 
 
-    //Get: Get admin by username
+    //Get: Get an admin by username
     @CrossOrigin(origins = "http://localhost:5173")
     @GetMapping("/{username}/password")
     public String getPasswordByUsername(@PathVariable String username) {
