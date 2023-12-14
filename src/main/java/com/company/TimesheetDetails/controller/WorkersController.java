@@ -27,7 +27,7 @@ public class WorkersController {
     }
 
 
-    @CrossOrigin(origins = "http://localhost:5174")
+    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("/workers")
     public void saveWorkers(@RequestBody Workers workers) {
         workersService.saveWorkers(workers);
