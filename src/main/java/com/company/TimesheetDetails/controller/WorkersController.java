@@ -33,13 +33,13 @@ public class WorkersController {
         workersService.saveWorkers(workers);
     }
 
-    //    @CrossOrigin(origins = "http://localhost:5174")
+        @CrossOrigin(origins = "http://localhost:5174")
     @PutMapping("/workers/{wId}")
     public Workers updateWorker(@PathVariable Long wId, @RequestBody Workers workerRequest) {
         return workersService.updateWorkers(wId, workerRequest);
     }
 
-//    @CrossOrigin(origins = "http://localhost:5174")
+    @CrossOrigin(origins = "http://localhost:5174")
 
 
     @GetMapping("/workers/new")
