@@ -4,6 +4,7 @@ const initialState = {
     users: []
 }
 
+
 fetch('https://callous-knot-production.up.railway.app/api/v1/workers')
     .then(response => response.json())
     .then(commits => users = commits);
