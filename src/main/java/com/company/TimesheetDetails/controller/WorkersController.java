@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
-@CrossOrigin(origins = "http://localhost:5175", allowCredentials = "true", allowedHeaders = {"Authorization", "Content-Type"})
+@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true", allowedHeaders = {"Authorization", "Content-Type"})
 public class WorkersController {
 
     private final WorkersService workersService;
